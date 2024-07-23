@@ -3,14 +3,14 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const songRoutes = require('./routes/songs');
 const path = require('path');
-
+ 
 require('dotenv').config();
  
 const app = express();
   
 // Connect to DB
 connectDB();
-
+ 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 // Middleware  

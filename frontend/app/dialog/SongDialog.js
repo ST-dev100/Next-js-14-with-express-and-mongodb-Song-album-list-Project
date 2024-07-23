@@ -12,7 +12,7 @@ const SongDialog = ({ song, onClose }) => {
         title: song.title,
         artist: song.artist,
         genre: song.genre,
-        album: song.album.name,
+        album: song.album,
       });
     }
   }, [song]);
@@ -50,9 +50,9 @@ const SongDialog = ({ song, onClose }) => {
           Close
         </button>
 
-        <h2 className="text-2xl font-semibold mb-4">{song.title}</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-black">{song.title}</h2>
         
-        <label className="block mb-2">
+        <label className="block mb-2 text-black">
           Song Title:
           <input
             type="text"
@@ -63,7 +63,7 @@ const SongDialog = ({ song, onClose }) => {
           />
         </label>
         
-        <label className="block mb-2">
+        <label className="block mb-2 text-black">
           Artist:
           <input
             type="text"
@@ -74,7 +74,7 @@ const SongDialog = ({ song, onClose }) => {
           />
         </label>
         
-        <label className="block mb-2">
+        <label className="block mb-2 text-black">
           Genre:
           <input
             type="text"
@@ -85,7 +85,7 @@ const SongDialog = ({ song, onClose }) => {
           />
         </label>
         
-        <label className="block mb-4">
+        <label className="block mb-4 text-black">
           Album:
           <input
             type="text"
