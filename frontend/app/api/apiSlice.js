@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const apiSlice = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://next-js-14-with-express-and-mongodb-song-album-list-project.vercel.app/api' }),
   tagTypes: ['Song'],
   endpoints: (builder) => ({
     getSongs: builder.query({
