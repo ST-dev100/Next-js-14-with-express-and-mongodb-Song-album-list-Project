@@ -1,5 +1,5 @@
 "use client";
-
+import Head from 'next/head';
 import Image from "next/image";
 import { useGetSongsQuery, useGetSongStatisticsQuery, useGetSongQuery, useCreateSongMutation, useDeleteSongMutation } from "./api/apiSlice";
 import './globals.css';
@@ -55,7 +55,13 @@ export default function Home() {
     if (loadingSongs || loadingStats || creatingSong) {
         return (
             <div className="flex items-center justify-center h-screen bg-gradient-to-b from-gray-800 to-gray-900">
-                <h1 className="text-2xl font-semibold text-white">Loading Songs...</h1>
+                        <Image
+                        src="/bg-img.jpg"
+                        alt="Responsive image"
+                        layout="responsive" // Makes the image responsive
+                        width={700} // Aspect ratio maintained
+                        height={475} // Aspect ratio maintained
+                        />
             </div>
         );
     }
@@ -91,7 +97,7 @@ export default function Home() {
                     <input name="album" value={songDetails.album} onChange={handleInputChange} placeholder="Album" className="p-2 rounded bg-gray-600 text-white" required />
                     <input name="genre" value={songDetails.genre} onChange={handleInputChange} placeholder="Genre" className="p-2 rounded bg-gray-600 text-white" required />
                 </div>
-                <button type="submit" className="mt-4 w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300">
+                <button type="submit" className="mt-4 w-full md:w-60 bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300">
                     Add Song
                 </button>
             </form>
